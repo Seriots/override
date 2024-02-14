@@ -1,0 +1,45 @@
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+char username[100];
+
+int verify_user_name(void)
+{
+	char *pbVar3;
+
+	puts("verifying username....\n");
+	pbVar3 = "dat_wil";
+	return strcmp(username,pbVar3);
+}
+
+int verify_user_pass(char *param_1)
+{
+	char *pbVar2;
+
+	pbVar2 = "admin";
+	return strcmp(param_1,pbVar2);
+}
+
+int main(void)
+{
+	char local_54 [16];
+	int local_14;
+  
+	local_14 = 0;
+	puts("********* ADMIN LOGIN PROMPT *********");
+	printf("Enter Username: ");
+	fgets(&username,256,stdin);
+	local_14 = verify_user_name();
+	if (local_14 == 0) {
+		puts("Enter Password: ");
+		fgets((char *)local_54,100,stdin);
+		local_14 = verify_user_pass(local_54);
+		puts("nope, incorrect password...\n");
+	}
+	else {
+		puts("nope, incorrect username...\n");
+	}
+	return 1;
+}
