@@ -205,9 +205,6 @@ Essayons le password,
 level08@OverRide:/var/crash$ su level09
 Password: 
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
-Partial RELRO   No canary found   NX enabled    PIE enabled     No RPATH   No RUNPATH   /home/users/level09/level09level08@OverRide:/var/crash$ su level09
-Password: 
-RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 Partial RELRO   No canary found   NX enabled    PIE enabled     No RPATH   No RUNPATH   /home/users/level09/level09
 ```
 > ### NEXT : [Level 09](/level09/resources/README.md)
