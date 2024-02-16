@@ -43,4 +43,4 @@ $ cat /home/users/level01/.pass
 uSq2ehEGT6c9S24zbshexZQBXUGrncxn5sD5QfGL
 ```
 
-> ### NEXT : [Level 01](/level01/resources/README.md)
+> ### NEXT : [Level 01](/level01/walkthrough.md)
