@@ -155,4 +155,4 @@ uid=1006(level06) gid=1006(level06) euid=1007(level07) egid=100(users) groups=10
 $ cat /home/users/level07/.pass
 GbcPDRgsFK77LNnnuh7QyFYA2942Gp8yKj9KrWD8
 ```
-> ### NEXT : [Level 07](/level07/resources/README.md)
+> ### NEXT : [Level 07](/level07/walkthrough.md)
