@@ -277,3 +277,4 @@ $ cat /home/users/level08/.pass
 7WJ6jFBzrcjEYXudxnM3kdW7n3qyxR6tk2xGrkSC
 
 ```
+> ### NEXT : [Level 08](/level08/walkthrough.md)
