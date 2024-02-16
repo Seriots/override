@@ -90,4 +90,4 @@ uid=1004(level04) gid=1004(level04) euid=1005(level05) egid=100(users) groups=10
 cat /home/users/level05/.pass
 3v8QLcN5SAhPaZZfEasfmXdwyR59ktDEMAwHF3aN
 ```
-> ### NEXT : [Level 05](/level05/resources/README.md)
+> ### NEXT : [Level 05](/level05/walkthrough.md)
