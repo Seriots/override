@@ -134,6 +134,9 @@ Segmentation fault (core dumped)
 Notre objectif va donc d'utiliser la place disponible dans le buffer de password pour reecrire le return du main
 Exploit -> `Ret2libc`
 
+> Pour une rapide explication ce au'on appelle `ret2libc` est un exploit utilisant `eip` pour jump dans la fonction `system` avec pour argument la commande voulu, ici `/bin/sh`
+> Pour plus d'info [How to perform a ret2libc attack](https://shellblade.net/files/docs/ret2libc.pdf)
+
 Pour ce faire nous allons devoir trouver l'`adresse` de la `fonction system` et une adresse d'une `string` contenant `/bin/sh`
 ```
 level01@OverRide:~$ gdb ./level01 
