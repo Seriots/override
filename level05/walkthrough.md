@@ -85,4 +85,4 @@ h4GtNnaMs2kZFN92ymTr2DcJHAzMfzLW25Ep59mq
 
 ```
 
-> ### NEXT : [Level 06](/level06/resources/README.md)
+> ### NEXT : [Level 06](/level06/walkthrough.md)
