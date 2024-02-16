@@ -45,8 +45,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 ```
 On remaque en testant le code qe si on rentre dans notre input un `buffer` de `156` characteres, le `child` ne se `quitte pas correctement`,
 Essayons donc de faire de nouveau un `Ret2libc` mais depuis le `child`.
+
 Pour executer correctement le child dans gdb et pouvoir recuperer les differentes adresses que l'ont a besoin pour l'exploit,
 nous devons utiliser l'option de gdb, `set follow-fork-mode child`
+
 Puis de nouveau on doit recuperer les adress de system et "/bin/sh",
 ```
 level04@OverRide:~$ gdb ./level04 
