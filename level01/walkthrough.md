@@ -196,4 +196,4 @@ uid=1001(level01) gid=1001(level01) euid=1002(level02) egid=100(users) groups=10
 cat /home/users/level02/.pass
 PwBLgNa8p8MTKW57S7zxVAQCxnCpV8JqTTs9XEBv
 ```
-> ### NEXT : [Level 02](/level02/resources/README.md)
+> ### NEXT : [Level 02](/level02/walkthrough.md)
