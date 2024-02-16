@@ -1,6 +1,6 @@
 # **Level 00**
 
-Pour ce `level00` nous avons un executable lancer avec les droits du `user suivant` et notre but est aue lors de l'execution du programme, nous puissions acceder au fichier .pass present dans le home du user suivant
+Pour ce `level00` nous avons un executable lancer avec les droits du `user suivant` et notre but est que lors de l'execution du programme, nous puissions acceder au fichier .pass present dans le home du user suivant
 
 Pour ce faire nous analysons le code de l'executable
 
