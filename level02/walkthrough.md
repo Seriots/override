@@ -149,4 +149,4 @@ Password:
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 Partial RELRO   Canary found      NX enabled    No PIE          No RPATH   No RUNPATH   /home/users/level03/level03
 ```
-> ### NEXT : [Level 03](/level03/resources/README.md)
+> ### NEXT : [Level 03](/level03/walkthrough.md)
