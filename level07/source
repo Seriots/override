@@ -1,0 +1,103 @@
+#include "out.h"
+
+void clear_stdin(void)
+{
+  int iVar1;
+  
+  do {
+    iVar1 = getchar();
+    if ((char)iVar1 == '\n') {
+      return;
+    }
+  } while ((char)iVar1 != -1);
+  return;
+}
+
+int get_unum(void)
+{
+  undefined4 local_10 [3];
+  
+  local_10[0] = 0;
+  fflush(stdout);
+  __isoc99_scanf("%u",local_10);
+  clear_stdin();
+  return local_10[0];
+}
+
+int store_number(int param_1)
+{
+  uint uVar1;
+  uint uVar2;
+  
+  printf(" Number: ");
+  uVar1 = get_unum();
+  printf(" Index: ");
+  uVar2 = get_unum();
+  if ((uVar2 % 3 == 0) || (uVar1 >> 0x18 == 0xb7)) {
+    puts(" *** ERROR! ***");
+    puts("   This index is reserved for wil!");
+    puts(" *** ERROR! ***");
+    return 1;
+  }
+  else {
+    *(uint *)(uVar2 * 4 + param_1) = uVar1;
+    return 0;
+  }
+}
+
+int read_number(int param_1)
+{
+  int iVar1;
+  
+  printf(" Index: ");
+  iVar1 = get_unum();
+  printf(" Number at data[%u] is %u\n",iVar1,*(int *)(iVar1 * 4 + param_1));
+  return 0;
+}
+
+int main(void)
+{
+	int in_GS_OFFSET;
+	char local_1bc [100];
+	int local_2c;
+	char *local_28[20];
+	int local_14;
+
+	local_14 = *(int *)(in_GS_OFFSET + 0x14);
+
+	memset(local_1bc,0,100);
+
+
+  do {
+    printf("Input command: ");
+    local_2c = 1;
+    fgets((char *)local_28,0x14,stdin);
+	local_28[strlen(local_28) - 1] = 0;
+	
+    if (!strcmp(local_28, "store")) {
+      local_2c = store_number(local_1bc);
+    }
+    else {
+      if (!strcmp(local_28, "read")) {
+        local_2c = read_number(local_1bc);
+      }
+      else {
+
+        if (!strcmp(local_28, "quit")) {
+          if (local_14 == *(int *)(in_GS_OFFSET + 0x14)) {
+            return 0;
+          }
+                    // WARNING: Subroutine does not return
+          __stack_chk_fail();
+        }
+      }
+    }
+    if (local_2c == 0) {
+      printf(" Completed %s command successfully\n",&local_28);
+    }
+    else {
+      printf(" Failed to do %s command\n",&local_28);
+    }
+    local_28 = 0;
+  } while( true );
+}
