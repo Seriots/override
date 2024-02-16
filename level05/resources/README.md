@@ -62,7 +62,7 @@ Tout simplement on recupere les deux derniers byte de l'addresse de base et les 
 
 Voici un schema pour expliquer
 
-![Le schema](/level05/ressources/ovveridelvl05.png)
+![Le schema](/level05/resources/ovveridelvl05.png)
 
 Donc le plan est d'ecrire les `2` premiers bytes de l'addresse de notre `shellcode` dans l'addresse `exit`
 puis les `2` derniers dans l'addresse d'`exit + 2`.
