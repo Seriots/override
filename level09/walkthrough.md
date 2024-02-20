@@ -146,5 +146,6 @@ id
 uid=1010(level09) gid=1010(level09) euid=1009(end) egid=100(users) groups=1009(end),100(users),1010(level09)
 cat /home/users/end/.pass            
 j4AunAPDXaJxxWjYEUxpanmvSgRDV3tpA5BEaBuE
-
 ```
+
+Et voila pour override !
